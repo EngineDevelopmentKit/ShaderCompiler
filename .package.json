@@ -1,0 +1,10 @@
+{
+    "name": "EngineDevelopmentKit/ShaderCompiler",
+    "dev": {
+        "modules": [
+            "Zefiros-Software/Zefiros-Defaults"
+        ],
+        "requires": [
+        ]
+    }
+}
