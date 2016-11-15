@@ -3,6 +3,9 @@
 -- License: https://github.com/bkaradzic/bgfx#license-bsd-2-clause
 --
 
+local vsandroid = require( "akaStiX/vsandroid", "@head" )
+local androidmk = require( "Meoo/androidmk", "@head" )
+
 workspace "ShaderCompiler"
     
     configurations { "Debug", "Release", "OptimisedDebug" }
@@ -54,8 +57,12 @@ workspace "ShaderCompiler"
     filter {}
 
 	project "ShaderCompiler"
-		uuid "f3cd2e90-52a4-11e1-b86c-0800200c9a66"
+		uuid "f3cd2e90-52a4-11e1-b86c-0800200c9a89"
 		kind "ConsoleApp"
+
+        zpm.uses { 
+            "Zefiros-Software/CoreLib"
+            }
 
 		local GLSL_OPTIMIZER = "3rdparty/glsl-optimizer"
 		local FCPP_DIR = "3rdparty/fcpp"

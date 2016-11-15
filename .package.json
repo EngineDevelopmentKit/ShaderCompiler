@@ -5,6 +5,10 @@
             "Zefiros-Software/Zefiros-Defaults"
         ],
         "requires": [
+	        {
+                "name": "Zefiros-Software/CoreLib",
+                "version": "@head"
+            }
         ]
     }
 }

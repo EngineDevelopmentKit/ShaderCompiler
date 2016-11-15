@@ -62,7 +62,7 @@ namespace bgfx
 #include <bx/string.h>
 #include <bx/hash.h>
 #include <bx/crtimpl.h>
-#include "../../src/vertexdecl.h"
+#include "vertexdecl.h"
 
 namespace bgfx
 {
@@ -133,6 +133,12 @@ namespace bgfx
 	bool compileHLSLShader(bx::CommandLine& _cmdLine, uint32_t _version, const std::string& _code, bx::WriterI* _writer);
 	bool compilePSSLShader(bx::CommandLine& _cmdLine, uint32_t _version, const std::string& _code, bx::WriterI* _writer);
 	bool compileSPIRVShader(bx::CommandLine& _cmdLine, uint32_t _version, const std::string& _code, bx::WriterI* _writer);
+
+  // andrewmac:
+  void compilerError(const char *_format, ...);
+  #define fprintf(target, format, ...) compilerError(format, ##__VA_ARGS__)
+  int compileShader(int _argc, const char* _argv[]);
+  void getShaderError(char* _outputText, uint16_t& _outputSize);
 
 } // namespace bgfx
 
