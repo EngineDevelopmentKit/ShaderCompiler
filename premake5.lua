@@ -108,9 +108,13 @@ workspace "ShaderCompiler"
 				"-Wshadow", -- glsl-optimizer is full of -Wshadow warnings ignore it.
 			}
 
-		configuration { "osx" }
+		configuration { "macosx" }
 			links {
 				"Cocoa.framework",
+			}
+
+			includedirs {
+                            path.join(BX_DIR, "include/compat/osx")
 			}
 
 		configuration { "vs*" }
